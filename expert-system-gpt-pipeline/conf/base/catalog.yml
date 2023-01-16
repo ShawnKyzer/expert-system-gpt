@@ -2,3 +2,6 @@
 #
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://kedro.readthedocs.io/en/stable/data/data_catalog.html
+expert_system_training_text:
+  type: text.TextDataSet
+  filepath: data/01_raw/training-set.txt
