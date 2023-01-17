@@ -5,3 +5,7 @@
 expert_system_training_text:
   type: text.TextDataSet
   filepath: data/01_raw/training-set.txt
+
+expert_system_gpt_pipeline.train_expert_system.metrics:
+  type: tracking.MetricsDataSet
+  filepath: data/09_tracking/metrics.json

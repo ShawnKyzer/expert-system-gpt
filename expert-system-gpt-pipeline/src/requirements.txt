@@ -7,7 +7,16 @@ jupyterlab_server>=2.11.1, <2.16.0
 jupyterlab~=3.0
 kedro~=0.18.4
 kedro-telemetry~=0.2.0
+kedro-viz~=5.1.1
 nbstripout~=0.4
 pytest-cov~=3.0
 pytest-mock>=1.7.1, <2.0
 pytest~=6.2
+# Requirements for training and tokenizing
+transformers~=4.25.1
+datasets~=2.8.0
+evaluate~=0.4.0
+accelerate~=0.15.0
+scikit-learn~=1.2.0
+# sql alchemy
+sqlalchemy<2.0

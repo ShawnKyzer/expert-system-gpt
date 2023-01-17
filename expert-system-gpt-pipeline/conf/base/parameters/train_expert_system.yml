@@ -3,3 +3,6 @@
 #
 # Documentation for this file format can be found in "Parameters"
 # Link: https://kedro.readthedocs.io/en/0.18.4/kedro_project_setup/configuration.html#parameters
+
+# Model can be one of: EleutherAI/gpt-neo-125M, EleutherAI/gpt-j-6B, EleutherAI/gpt-neo-1.3B, EleutherAI/gpt-neo-2.7B
+base_model_name: "EleutherAI/gpt-neo-125M"
