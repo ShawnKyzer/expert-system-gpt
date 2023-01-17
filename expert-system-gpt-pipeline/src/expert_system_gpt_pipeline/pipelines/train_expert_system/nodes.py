@@ -69,5 +69,5 @@ def train_expert_system_gpt(tokenizer: AutoTokenizer, small_train_dataset: Datas
     log.info("Starting training")
     results = trainer.train()
     trainer.save_model()
-    tokenizer.save_pretrained("data/07_model_output")
+    tokenizer.save_pretrained("data/06_models")
     return results.metrics, model
