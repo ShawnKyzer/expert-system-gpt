@@ -4,7 +4,8 @@ generated using Kedro 0.18.4
 """
 
 from kedro.pipeline import Pipeline, node, pipeline
-from .nodes import get_tokenizer, get_base_model, prepare_text_data, train_expert_system_gpt
+from .nodes import get_tokenizer, get_base_model, prepare_text_data, train_expert_system_gpt, \
+    prepare_container_for_expert_system_gpt_api
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -32,5 +33,11 @@ def create_pipeline(**kwargs) -> Pipeline:
             inputs=["tokenizer", "small_train_dataset", "model"],
             outputs=["expert_system_gpt_pipeline.train_expert_system.metrics", "model_trained"],
             name="train_expert_system_gpt",
+        ),
+        node(
+            func=prepare_container_for_expert_system_gpt_api,
+            inputs=["tokenizer", "model_trained"],
+            outputs=None,
+            name="prepare_container_for_expert_system_gpt_api",
         ),
     ])

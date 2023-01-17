@@ -4,6 +4,7 @@ from datasets import load_dataset, Dataset
 
 import numpy as np
 import evaluate
+import bentoml
 import logging
 
 log = logging.getLogger('expert_system_gpt_pipeline')
@@ -33,7 +34,8 @@ def prepare_text_data(tokenizer: AutoTokenizer, file_path: str):
 
     log.info("Splitting and tokenizing dataset")
     tokenized_datasets = current_dataset.map(tokenize_function, batched=True)
-    small_train_dataset = tokenized_datasets["train"]  # .select(range(1)) # Comment this back out to run all data in pipeline
+    small_train_dataset = tokenized_datasets[
+        "train"]  # .select(range(1)) # Comment this back out to run all data in pipeline
     return small_train_dataset
 
 
@@ -71,3 +73,9 @@ def train_expert_system_gpt(tokenizer: AutoTokenizer, small_train_dataset: Datas
     trainer.save_model()
     tokenizer.save_pretrained("data/06_models")
     return results.metrics, model
+
+
+def prepare_container_for_expert_system_gpt_api(tokenizer: AutoTokenizer, model: AutoModelForCausalLM):
+    expert_system_gpt_pipeline = pipeline('text-generation', model=model, tokenizer=tokenizer)
+    result = bentoml.transformers.save_model(name="expertsystemgpt", pipeline=expert_system_gpt_pipeline)
+    return result

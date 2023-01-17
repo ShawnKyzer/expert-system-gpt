@@ -20,3 +20,5 @@ accelerate~=0.15.0
 scikit-learn~=1.2.0
 # sql alchemy
 sqlalchemy<2.0
+# For serving the model at the end as an API
+bentoml~=1.0.12
