@@ -42,7 +42,9 @@ def prepare_text_data(tokenizer: AutoTokenizer, file_path: str):
 def train_expert_system_gpt(tokenizer: AutoTokenizer, small_train_dataset: Dataset, model: AutoModelForCausalLM):
     log.info("Preparing training arguments")
 
-    training_args = TrainingArguments(output_dir="data/07_model_output",
+    output_dir = "data/06_models"
+
+    training_args = TrainingArguments(output_dir=output_dir,
                                       report_to='all',
                                       logging_dir='./logs',
                                       per_device_train_batch_size=1,
@@ -71,7 +73,7 @@ def train_expert_system_gpt(tokenizer: AutoTokenizer, small_train_dataset: Datas
     log.info("Starting training")
     results = trainer.train()
     trainer.save_model()
-    tokenizer.save_pretrained("data/06_models")
+    tokenizer.save_pretrained(output_dir)
     return results.metrics, model
 
 
