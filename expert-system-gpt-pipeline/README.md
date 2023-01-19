@@ -1,8 +1,10 @@
 # expert-system-gpt-pipeline
 
+Before we begin be sure and put your training data in the `data/01_raw` directory with the filename `training-set.txt`
+
 ## Overview
 
-This is your new Kedro project, which was generated using `Kedro 0.18.4`.
+This is your expert-system-gpt-pipeline, which was generated using `Kedro 0.18.4`.
 
 Take a look at the [Kedro documentation](https://kedro.readthedocs.io) to get started.
 
