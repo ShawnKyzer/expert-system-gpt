@@ -33,10 +33,13 @@ In this repository you will learn how to create your own expert system by fine-t
 4. Move into the main pipeline directory
     
     ```cd expert-system-gpt-pipeline```
-5. Setup your IDE for Kedro projects
+5. Install the dependencies
+
+   ```pip install -r src/requirements.txt```
+6. Setup your IDE for Kedro projects
    * PyCharm or IntelliJ (https://kedro.readthedocs.io/en/stable/development/set_up_pycharm.html)
    * Visual Studio Code (https://kedro.readthedocs.io/en/stable/development/set_up_vscode.html)
-5. Continue the next steps in this [README](expert-system-gpt-pipeline/README.md)
+7. Continue the next steps in this [README](expert-system-gpt-pipeline/README.md)
 
 ## References
 
