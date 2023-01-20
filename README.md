@@ -33,7 +33,7 @@ In this repository you will learn how to create your own expert system by fine-t
 4. Move into the main pipeline directory
     
     ```cd expert-system-gpt-pipeline```
-5. Follow the instructions in the README.md file located in that directory
+6. Continue the next steps in this [README](expert-system-gpt-pipeline/README.md)
 
 ## References
 
