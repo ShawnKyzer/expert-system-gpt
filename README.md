@@ -26,7 +26,7 @@ In this repository you will learn how to create your own expert system by fine-t
 1. Download and install the latest version of Anaconda (https://docs.anaconda.com/anaconda/install/index.html)
 2. Create your venv from the environment.yml file
    
-    ```conda env create -f environment.yml```
+    ```conda env create -f environment.yaml```
 3. Activate the environment
     
     ```conda activate expert-system-gpt```
